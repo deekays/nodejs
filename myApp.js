@@ -17,11 +17,12 @@ function middle (req,res,next)
 app.use(middle);
 
 app.get('/now', (req,res,next)=>{
-    req.time = new Date.toString();
+    req.time = new Date().toString();
     next();
 }, (req, res)=>{
     res.json({"time":req.time});
 } )
+
 
 
 
