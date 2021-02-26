@@ -38,6 +38,11 @@ app.get('/name', (req, res)=>{
     res.json({"name":first + " " + last});
 })
 
+app.post('/name', (req,res)=>{
+    let first = req.body.first;
+    let last = req.body.last;
+    res.json({"name":first + " " + last});
+})
 
 
 
