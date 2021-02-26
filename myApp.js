@@ -22,14 +22,14 @@ function b(req, res)
     let hello = "Hello json";
     if(process.env.MESSAGE_STYLE=="uppercase")
     {
-        hello = hello.toUpperCase();
+        hello = "HELLO JSON";
     }
     res.json({"message": hello});
 }
 
 app.get('/json', b);
 
-app.get('/json2', (req,res)=>res.json({"message": "Hello json"}) );
+//app.get('/json2', (req,res)=>res.json({"message": "Hello json"}) );
 
 
 
