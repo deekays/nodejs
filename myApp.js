@@ -1,4 +1,5 @@
 const { json } = require('body-parser');
+const bodyParser = require('body-parser');
 var express = require('express');
 var app = express();
 
@@ -13,6 +14,9 @@ function middle (req,res,next)
     console.log(`${meth} ${path} - ${ip}`);
     next();
 }
+
+app.use(bodyParser);
+
 
 app.use(middle);
 
@@ -33,6 +37,7 @@ app.get('/name', (req, res)=>{
     let last = req.query. last;
     res.json({"name":first + " " + last});
 })
+
 
 
 
