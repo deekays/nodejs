@@ -1,7 +1,6 @@
 const { json } = require('body-parser');
 var express = require('express');
 var app = express();
-require('dotenv').config();
 
 console.log("Hello World");
 
