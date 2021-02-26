@@ -17,12 +17,16 @@ const publicPath = __dirname + "/public";
 
 app.use('/public',express.static(publicPath));
 
+function b(req, res)
+{
+    res.json({"message": "Hello json"});
+}
 
+app.get('/json', b);
 
-let hello = {"message": "Hello json"};
-app.get('/json', res.json(hello));
+app.get('/json2', (req,res)=>res.json({"message": "Hello json"}) );
 
-
+app.get('/json3', res.json({"message": "Hello json"}) );
 
 
 
