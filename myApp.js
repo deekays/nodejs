@@ -12,8 +12,9 @@ function a(req, res)
 
 app.get('/',a);
 
+const publicPath = __dirname + "/public";
 
-
+app.use(express.static(publicPath));
 
 
 
