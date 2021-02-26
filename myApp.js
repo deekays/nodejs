@@ -26,8 +26,6 @@ app.get('/json', b);
 
 app.get('/json2', (req,res)=>res.json({"message": "Hello json"}) );
 
-app.get('/json3', res.json({"message": "Hello json"}) );
-
 
 
 
