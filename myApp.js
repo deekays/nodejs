@@ -25,7 +25,7 @@ function b(req, res)
         hello = "HELLO JSON";
     }
     else {
-        hello = "Hello json";
+        hello = "hit else";
     }
     res.json({"message": hello});
 }
