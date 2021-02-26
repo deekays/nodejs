@@ -1,3 +1,4 @@
+const { json } = require('body-parser');
 var express = require('express');
 var app = express();
 
@@ -18,10 +19,8 @@ app.use('/public',express.static(publicPath));
 
 
 
-
-
-
-
+let hello = {"message": "Hello json"};
+app.get('/json', res.json(hello));
 
 
 
