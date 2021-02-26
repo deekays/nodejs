@@ -19,7 +19,12 @@ app.use('/public',express.static(publicPath));
 
 function b(req, res)
 {
-    res.json({"message": "Hello json"});
+    let hello = "Hello json";
+    if(process.env.MESSAGE_STYLE=="uppercase")
+    {
+        hello = hello.toUpperCase();
+    }
+    res.json({"message": hello});
 }
 
 app.get('/json', b);
