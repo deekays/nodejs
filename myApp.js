@@ -1,5 +1,5 @@
 const { json } = require('body-parser');
-const bodyParser = require('body-parser');
+var bodyParser = require('body-parser');
 var express = require('express');
 var app = express();
 
@@ -15,7 +15,7 @@ function middle (req,res,next)
     next();
 }
 
-app.use(bodyParser);
+app.use(bodyParser.urlencoded({extended: false}));
 
 
 app.use(middle);
