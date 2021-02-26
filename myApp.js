@@ -6,7 +6,8 @@ console.log("Hello World");
 
 function a(req, res)
 {
-    res.send('Hello Express');
+    const path = __dirname + "/views/index.html";
+    res.sendFile(path);
 }
 
 app.get('/',a);
