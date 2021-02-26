@@ -5,6 +5,17 @@ var app = express();
 console.log("Hello World");
 
 
+function middle (req,res,next)
+{
+    let meth = req.method;
+    let path = req.path;
+    let ip = req.ip;
+    console.log(`${meth} ${path} - ${ip}`);
+    next();
+}
+
+app.use(middle);
+
 function a(req, res)
 {
     const path = __dirname + "/views/index.html";
@@ -32,17 +43,10 @@ function b(req, res)
 
 app.get('/json', b);
 
-function middle (req,res,next)
-{
-    let meth = req.method;
-    let path = req.path;
-    let ip = req.ip;
-    console.log(`${meth} ${path} - ${ip}`);
-    next();
-}
 
 
-app.use(middle);
+
+
 
 //app.get('/json2', (req,res)=>res.json({"message": "Hello json"}) );
 
